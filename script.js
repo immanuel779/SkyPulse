@@ -1,3 +1,6 @@
+let deferredPrompt;
+const installBtn = document.getElementById("install-btn");
+
 /* ===========================
    DOM ELEMENTS
 =========================== */
@@ -208,3 +211,28 @@ window.addEventListener("load", () => {
     getUserLocation();
   }
 });
+
+
+window.addEventListener("beforeinstallprompt", e => {
+  e.preventDefault();
+  deferredPrompt = e;
+  installBtn.hidden = false;
+});
+
+installBtn.addEventListener("click", async () => {
+  if (!deferredPrompt) return;
+
+  deferredPrompt.prompt();
+  const { outcome } = await deferredPrompt.userChoice;
+
+  if (outcome === "accepted") {
+    console.log("App installed");
+  }
+
+  deferredPrompt = null;
+  installBtn.hidden = true;
+});
+window.addEventListener("appinstalled", () => {
+  installBtn.hidden = true;
+});
+
