@@ -1,24 +1,26 @@
 {
   "name": "SkyPulse Weather",
   "short_name": "SkyPulse",
-  "description": "A simple weather app for current conditions",
-  "start_url": "/",
+  "description": "Fast and accurate weather updates anywhere.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#0f0f14",
   "theme_color": "#6366f1",
+  "categories": ["weather", "utilities"],
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "/icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "any maskable"
     },
     {
-      "src": "icon-512.png",
+      "src": "/icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "any maskable"
     }
   ]
 }
-
