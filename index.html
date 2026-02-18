@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SkyPulse • Weather</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>SkyPulse <small>v1.0</small></h1>
+     
+    </header>
+
+    <div class="search-group">
+      <input type="text" id="city-input" placeholder="Search city (e.g. Lagos)" autocomplete="off" required />
+      <button id="search-btn">Search</button>
+    </div>
+
+    <div id="loading" class="loading">Fetching weather...</div>
+    <div id="error" class="error" style="display:none;"></div>
+
+    <div id="weather" class="current-weather" style="display:none;">
+      <div class="icon" id="icon">☁️</div>
+      <div class="temperature" id="temp">--°C</div>
+      <div class="feels-like" id="feels">Feels like --°C</div>
+      <div class="condition" id="condition">Loading...</div>
+
+      <div class="details">
+        <div class="detail-item">
+          <div class="detail-label">Humidity</div>
+          <div id="humidity">--%</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Wind</div>
+          <div id="wind">-- km/h</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Pressure</div>
+          <div id="pressure">-- hPa</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Location</div>
+          <div id="location">--</div>
+        </div>
+      </div>
+    </div>
+  </div>
+ <p>Proudly brought to you by Codecraft Nig.Ltd</p>
+ <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+      .then(() => console.log('Service Worker registered'))
+      .catch(err => console.error('Service Worker error:', err));
+  }
+</script>
+  <script src="script.js"></script>
+
+</body>
+</html>
