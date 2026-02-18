@@ -1,186 +1,221 @@
-    :root {
-      --bg: #0f0f14;
-      --surface: #16181f;
-      --surface-hover: #1e212b;
-      --text: #e2e8f0;
-      --text-secondary: #94a3b8;
-      --accent: #6366f1;
-      --accent-dark: #4f46e5;
-      --border: #272a35;
-      --rain: #60a5fa;
-      --sun: #fbbf24;
-      --cloud: #cbd5e1;
-      --danger: #f43f5e;
-    }
+/* ===========================
+   Root Theme Variables
+=========================== */
+:root {
+  --bg: #0f0f14;
+  --surface: #16181f;
+  --surface-hover: #1e212b;
+  --text: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --accent: #6366f1;
+  --accent-dark: #4f46e5;
+  --border: #272a35;
+  --danger: #f43f5e;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+/* ===========================
+   Reset & Base
+=========================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      padding: 2rem 1rem;
-      line-height: 1.5;
-    }
+html {
+  height: 100%;
+}
 
-    .container {
-      max-width: 480px;
-      margin: 90px auto;
-    }
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
 
-    header {
-      text-align: center;
-      margin-bottom: 2.5rem;
-    }
+/* ===========================
+   Layout
+=========================== */
+.container {
+  max-width: 460px;
+  margin: 5.5rem auto 2rem;
+  padding: 0 1rem;
+}
 
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      background: linear-gradient(90deg, #a5b4fc, #c084fc);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
+.app-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
 
-    small {
-      font-size: 2rem;
-      font-weight: 500;
-      background: linear-gradient(90deg, #a5b4fc, #c084fc);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
+.footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: linear-gradient(90deg, #a5b4fc, #c084fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 
-    .search-group {
-      display: flex;
-      gap: 0.75rem;
-      margin-bottom: 2rem;
-    }
+/* ===========================
+   Typography
+=========================== */
+h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  background: linear-gradient(90deg, #a5b4fc, #c084fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 
-    input {
-      flex: 1;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      color: var(--text);
-      font-size: 1.05rem;
-      padding: 0.9rem 1.2rem;
-      border-radius: 0.875rem;
-      outline: none;
-      transition: all 0.2s;
-    }
+h1 small {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
 
-    input:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
-    }
+/* ===========================
+   Search
+=========================== */
+.search-group {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
 
-    button {
-      background: var(--accent);
-      color: white;
-      border: none;
-      border-radius: 0.875rem;
-      padding: 0 1.6rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
+.search-group input {
+  flex: 1;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 1rem;
+  padding: 0.85rem 1.1rem;
+  border-radius: 0.875rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
 
-    button:hover {
-      background: var(--accent-dark);
-      transform: translateY(-1px);
-    }
+.search-group input::placeholder {
+  color: var(--text-secondary);
+}
 
-    .current-weather {
-      background: var(--surface);
-      border-radius: 1.25rem;
-      padding: 2rem;
-      border: 1px solid var(--border);
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    }
+.search-group input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
 
-    .icon {
-      font-size: 6.5rem;
-      margin: 1rem 0 1.5rem;
-      line-height: 1;
-    }
+.search-group button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 0.875rem;
+  padding: 0 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.2s ease;
+}
 
-    .temperature {
-      font-size: 4.5rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
+.search-group button:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
 
-    .feels-like {
-      font-size: 1.3rem;
-      color: var(--text-secondary);
-      margin-bottom: 1.5rem;
-    }
+.search-group button:active {
+  transform: translateY(0);
+}
 
-    .condition {
-      font-size: 1.5rem;
-      font-weight: 500;
-      margin-bottom: 1.8rem;
-    }
+/* ===========================
+   Weather Card
+=========================== */
+.current-weather {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
 
-    .details {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      font-size: 1.1rem;
-    }
+.icon {
+  font-size: 6rem;
+  margin: 1rem 0 1.5rem;
+}
 
-    .detail-item {
-      background: var(--surface-hover);
-      padding: 1rem;
-      border-radius: 0.875rem;
-    }
+.temperature {
+  font-size: 4.2rem;
+  font-weight: 700;
+}
 
-    .detail-label {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      margin-bottom: 0.4rem;
-    }
+.feels-like {
+  margin-top: 0.25rem;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
 
-    .loading,
-    .error {
-      text-align: center;
-      padding: 4rem 1rem;
-      color: var(--text-secondary);
-    }
+.condition {
+  margin: 1.5rem 0;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
 
-    .error {
-      color: var(--danger);
-    }
+/* ===========================
+   Weather Details
+=========================== */
+.details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
 
-    p{
-      font-size: 12px;
-      font-weight: 500;
-      background: linear-gradient(90deg, #a5b4fc, #c084fc);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-align: center;
-    }
-    @media (max-width: 500px) {
-      .search-group {
-        flex-direction: column;
-      }
+.detail-item {
+  background: var(--surface-hover);
+  border-radius: 0.875rem;
+  padding: 1rem;
+}
 
-      button {
-        padding: 0.9rem;
-      }
+.detail-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
 
-      .temperature {
-        font-size: 3.8rem;
-      }
+/* ===========================
+   States
+=========================== */
+.loading,
+.error {
+  padding: 3.5rem 1rem;
+  text-align: center;
+  color: var(--text-secondary);
+}
 
-      .icon {
-        font-size: 5.5rem;
-      }
-    }
+.error {
+  color: var(--danger);
+}
+
+/* ===========================
+   Responsive
+=========================== */
+@media (max-width: 520px) {
+  .search-group {
+    flex-direction: column;
+  }
+
+  .search-group button {
+    padding: 0.85rem;
+  }
+
+  .temperature {
+    font-size: 3.6rem;
+  }
+
+  .icon {
+    font-size: 5.2rem;
+  }
+}
