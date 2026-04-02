@@ -1,26 +1,100 @@
 {
-  "name": "SkyPulse Weather",
+  "name": "SkyPulse Weather App",
   "short_name": "SkyPulse",
-  "description": "Fast and accurate weather updates anywhere.",
-  "start_url": "/?source=pwa",
+  "description": "Professional weather app with real-time conditions, 7-day forecast, and offline support",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "/index.html",
   "scope": "/",
   "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#0f0f14",
-  "theme_color": "#6366f1",
-  "categories": ["weather", "utilities"],
+  "background_color": "#0f2027",
+  "theme_color": "#6c63ff",
+  "orientation": "portrait-primary",
+  "categories": ["weather", "utilities", "productivity"],
+  "prefer_related_applications": false,
   "icons": [
     {
-      "src": "/icons/icon-192.png",
+      "src": "icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/icons/icon-512.png",
+      "src": "icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Search Weather",
+      "short_name": "Search",
+      "description": "Search for a city",
+      "url": "/?action=search",
+      "icons": [
+        {
+          "src": "icons/icon-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "My Location",
+      "short_name": "Location",
+      "description": "Weather at my location",
+      "url": "/?action=location",
+      "icons": [
+        {
+          "src": "icons/icon-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/mobile-home.png",
+      "sizes": "360x640",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Current weather display with 7-day forecast"
     }
   ]
 }
